@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posicionamiento Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-red-100 to-red-200 min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-6xl bg-white shadow-2xl rounded-2xl p-8 border border-gray-200">
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-10 tracking-wide text-red-700 drop-shadow-lg">
+      <strong><em>Posicionamiento Web</em></strong>
+    </h1>
+
+    <div class="flex flex-col md:flex-row gap-8 justify-center">
+
+      <!-- BOTONES -->
+      <div class="w-full md:w-1/3 flex flex-col gap-6">
+
+        <button onclick="cargar('seo')" class="group p-5 border-2 border-red-600 rounded-xl text-red-700 font-semibold hover:bg-red-50 transition flex items-center gap-3 shadow-md hover:shadow-xl">
+          <img src="https://cdn-icons-png.freepik.com/512/5681/5681665.png" class="w-10 h-10 opacity-80 group-hover:scale-110 transition" />
+        <em> <strong>SEO</strong></em></button>
+
+        <button onclick="cargar('sem')" class="group p-5 border-2 border-red-600 rounded-xl text-red-700 font-semibold hover:bg-red-50 transition flex items-center gap-3 shadow-md hover:shadow-xl">
+          <img src="https://cdn-icons-png.flaticon.com/512/5681/5681632.png" class="w-10 h-10 opacity-80 group-hover:scale-110 transition" />
+        <em> <strong>SEM</strong></em></button>
+
+        <button onclick="cargar('visibilidad')" class="group p-5 border-2 border-red-600 rounded-xl text-red-700 font-semibold hover:bg-red-50 transition flex items-center gap-3 shadow-md hover:shadow-xl">
+          <img src="https://cdn-icons-png.flaticon.com/512/999/999001.png" class="w-10 h-10 opacity-80 group-hover:scale-110 transition" />
+        <em> <strong>Visibilidad en resultados</strong></em></button>
+
+      </div>
+
+      <!-- CONTENIDO -->
+      <div id="contenido" class="w-full md:w-2/3 min-h-[350px] p-8 border-2 border-gray-300 rounded-2xl bg-gray-50 text-gray-800 shadow-inner flex justify-center items-center">
+        <div class="flex flex-col items-center text-center text-gray-500">
+          <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-magnifying-glass-with-blank-search-bar-isolated-minimal-web-search-engine-png-image_13390743.png" class="w-28 opacity-60 mb-4" />
+          <p class="text-xl">Selecciona una opción para ver la información.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 p-5 text-center bg-red-800 text-white rounded-xl text-lg font-medium shadow-md tracking-wide">
+    <em> Zamora Flores José Gabriel. (660185020) </em> </div>
+  </div>
+
+  <script>
+    const info = {
+      seo: `
+        <div class='flex flex-col gap-4'>
+          <img src="https://www.pixel-gd.net/wp-content/uploads/2017/01/SEO-PNG-Pic.png" class="w-24 mx-auto opacity-90" />
+          <h2 class='text-3xl font-bold text-red-700 mb-2 text-center'>SEO</h2>
+          <p class='text-lg'>
+            El SEO (Optimización para Motores de Búsqueda) consiste en aplicar diferentes mejoras a una página web 
+            para que aparezca en mejores posiciones dentro de los resultados orgánicos de buscadores como Google. 
+            Estas mejoras incluyen un buen uso de palabras clave, una estructura clara del sitio, tiempos de carga rápidos 
+            y contenido útil y de calidad para los usuarios.
+          </p>
+        </div>
+      `,
+
+      sem: `
+        <div class='flex flex-col gap-4'>
+          <img src="https://www.starmark.com/wp-content/uploads/SMI_eTipEmail_number_217_700pix.png" class="w-24 mx-auto opacity-90" />
+          <h2 class='text-3xl font-bold text-red-700 mb-2 text-center'>SEM</h2>
+          <p class='text-lg'>
+            El SEM (Marketing en Motores de Búsqueda) se basa en promocionar un sitio web a través de anuncios pagados, 
+            logrando aparecer rápidamente en las primeras posiciones. 
+            Normalmente se utiliza el sistema de pago por clic (PPC), además de estrategias de segmentación y anuncios patrocinados 
+            para llegar a públicos específicos.
+          </p>
+        </div>
+      `,
+
+      visibilidad: `
+        <div class='flex flex-col gap-4'>
+          <img src="https://cdn-icons-png.flaticon.com/512/1589/1589689.png" class="w-24 mx-auto opacity-90" />
+          <h2 class='text-3xl font-bold text-red-700 mb-2 text-center'>Visibilidad en Resultados</h2>
+          <p class='text-lg'>
+            La visibilidad en los motores de búsqueda indica la frecuencia y el lugar en el que aparece un sitio 
+            dentro de los resultados de un buscador. 
+            Para lograr una buena visibilidad se combinan técnicas de SEO, campañas SEM, creación de contenido optimizado 
+            y un enfoque constante en mejorar la experiencia del usuario.
+          </p>
+        </div>
+      `
+    };
+
+    function cargar(tipo) {
+      document.getElementById('contenido').innerHTML = info[tipo];
+    }
+  </script>
+
+</body>
+</html>
+
