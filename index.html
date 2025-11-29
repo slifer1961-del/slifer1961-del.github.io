@@ -1,98 +1,234 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Posicionamiento Web</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ritmos en la Ciudad — Resumen del Festival Urbano</title>
+  <meta name="description" content="Cobertura periodística del Festival Urbano 2025 en la Plazoleta Central: crónica, audio y video.">
+  <style>
+    /* --- Estilos tipo periódico moderno --- */
+    :root{
+      --max-width:1000px;
+      --accent:#0b66c3;
+      --muted:#666;
+      --bg:#f6f7f9;
+      --card:#ffffff;
+      --serif:'Georgia', 'Times New Roman', serif;
+      --sans:Arial, Helvetica, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:var(--bg);
+      color:#111;
+      line-height:1.5;
+      display:flex;
+      justify-content:center;
+      padding:24px;
+    }
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+    }
+    header.site-header{
+      background-color:#B06B6D;
+      background:linear-gradient(90deg, rgba(0,074,245,0.3), transparent);
+      padding:18px 18px;
+      border-radius:8px;
+      margin-bottom:18px;
+    }
+    .masthead{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .masthead h1{
+      font-family:var(--serif);
+      margin:0;
+      font-size:1.6rem;
+      letter-spacing:0.2px;
+    }
+    .byline{
+      color:var(--muted);
+      font-size:0.9rem;
+      margin-top:6px;
+    }
+
+    main.article{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:20px;
+    }
+
+    article.story{
+      background:var(--card);
+      padding:18px;
+      border-radius:8px;
+      box-shadow:0 6px 18px rgba(20,20,30,0.04);
+    }
+    .lede{
+      font-size:1.05rem;
+      font-weight:600;
+      margin-bottom:12px;
+    }
+    figure.hero{
+      margin:0 0 12px 0;
+    }
+    figure.hero img{
+      width:100%;
+      height:auto;
+      border-radius:6px;
+      display:block;
+    }
+    figcaption{
+      font-size:0.85rem;
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    .content p{margin:0 0 12px 0}
+    .quote{
+      border-left:4px solid var(--accent);
+      padding-left:12px;
+      margin:12px 0;
+      color:#222;
+      background:rgba(11,102,195,0.03);
+      border-radius:4px;
+    }
+
+    /* Multimedia box */
+    .media{
+      margin-top:12px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    audio, video{
+      width:100%;
+      max-width:100%;
+      border-radius:6px;
+      background:#000;
+    }
+
+    aside.sidebar{
+      align-self:start;
+      background:var(--card);
+      padding:14px;
+      border-radius:8px;
+      box-shadow:0 6px 18px rgba(20,20,30,0.04);
+      font-size:0.95rem;
+    }
+    .sidebar h3{margin-top:0}
+    .related img{width:100%;border-radius:6px}
+    .meta{color:var(--muted);font-size:0.85rem;margin-bottom:8px}
+
+    footer.site-footer{
+      margin-top:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width:880px){
+      main.article{
+        grid-template-columns:1fr;
+        padding-bottom:18px;
+      }
+      aside.sidebar{order:2}
+    }
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-red-100 to-red-200 min-h-screen flex items-center justify-center">
-  <div class="w-full max-w-6xl bg-white shadow-2xl rounded-2xl p-8 border border-gray-200">
-
-    <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-10 tracking-wide text-red-700 drop-shadow-lg">
-      <strong><em>Posicionamiento Web</em></strong>
-    </h1>
-
-    <div class="flex flex-col md:flex-row gap-8 justify-center">
-
-      <!-- BOTONES -->
-      <div class="w-full md:w-1/3 flex flex-col gap-6">
-
-        <button onclick="cargar('seo')" class="group p-5 border-2 border-red-600 rounded-xl text-red-700 font-semibold hover:bg-red-50 transition flex items-center gap-3 shadow-md hover:shadow-xl">
-          <img src="https://cdn-icons-png.freepik.com/512/5681/5681665.png" class="w-10 h-10 opacity-80 group-hover:scale-110 transition" />
-        <em> <strong>SEO</strong></em></button>
-
-        <button onclick="cargar('sem')" class="group p-5 border-2 border-red-600 rounded-xl text-red-700 font-semibold hover:bg-red-50 transition flex items-center gap-3 shadow-md hover:shadow-xl">
-          <img src="https://cdn-icons-png.flaticon.com/512/5681/5681632.png" class="w-10 h-10 opacity-80 group-hover:scale-110 transition" />
-        <em> <strong>SEM</strong></em></button>
-
-        <button onclick="cargar('visibilidad')" class="group p-5 border-2 border-red-600 rounded-xl text-red-700 font-semibold hover:bg-red-50 transition flex items-center gap-3 shadow-md hover:shadow-xl">
-          <img src="https://cdn-icons-png.flaticon.com/512/999/999001.png" class="w-10 h-10 opacity-80 group-hover:scale-110 transition" />
-        <em> <strong>Visibilidad en resultados</strong></em></button>
-
-      </div>
-
-      <!-- CONTENIDO -->
-      <div id="contenido" class="w-full md:w-2/3 min-h-[350px] p-8 border-2 border-gray-300 rounded-2xl bg-gray-50 text-gray-800 shadow-inner flex justify-center items-center">
-        <div class="flex flex-col items-center text-center text-gray-500">
-          <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-magnifying-glass-with-blank-search-bar-isolated-minimal-web-search-engine-png-image_13390743.png" class="w-28 opacity-60 mb-4" />
-          <p class="text-xl">Selecciona una opción para ver la información.</p>
+<body>
+<div class="container">
+  <header class="site-header" role="banner">
+      <div class="masthead">
+        <div>
+          <h1>Ritmos en la Ciudad</h1>
+          <div class="byline">Por José G. Zamora (Viernes 17 de octubre de 2025).</div>
         </div>
       </div>
-    </div>
+  </header>
 
-    <div class="mt-10 p-5 text-center bg-red-800 text-white rounded-xl text-lg font-medium shadow-md tracking-wide">
-    <em> Zamora Flores José Gabriel. (660185020) </em> </div>
+  <main class="article" role="main">
+    <article class="story" aria-labelledby="story-title">
+      <h2 id="story-title">El Festival que devolvió la vida a la CDMX</h2>
+      <div class="meta"><em><strong>Crónica · Cultura · Reportaje</strong></em></div>
+
+      <figure class="hero">
+        <picture>
+          <source srcset="assets/festival-plazoleta-1200.webp" type="image/webp">
+          <source srcset="assets/festival-plazoleta-1200.jpg" type="image/jpeg">
+        <a href="assets/6421efc23deca405060617.jpeg"><img src="assets/6421efc23deca405060617.jpeg" alt="Festival cultural en el Palacio Nacional de la CDMX" width="100" height="100"></a> </picture>
+        <figcaption>Asistentes y puestos gastronómicos en el Palacio Nacional de la CDMX, sábado por la tarde.</figcaption>
+      </figure>
+
+      <p class="lede">Miles de personas se reunieron para disfrutar de música en vivo, murales y gastronomía local; organizadores dicen que el festival busca consolidarse como una plataforma para artistas emergentes.</p>
+
+      <div class="content">
+        <p>El festival, organizado por la asociación cultural “Vías y Sonidos”, reunió a bandas locales y colectivos de arte durante dos días. En esta crónica compartimos testimonios, sonido en vivo y un video resumen para acercar la experiencia a los lectores.</p>
+
+        <div class="quote" aria-hidden="false">
+          “Queríamos un espacio donde la ciudad se reencontrara con su cultura. La respuesta superó nuestras expectativas”, comenta Ana López, coordinadora del evento.
+        </div>
+
+        <h3>Audio:&nbsp; &nbsp;Entrevista con la gente que disfruto de esta experiencia.&nbsp;</h3>
+       
+
+        <div class="media">
+          <audio controls preload="metadata" aria-describedby="audio-desc">
+            <source src="assets/WhatsApp Audio 2025-10-17 at 7.35.28 PM.mpeg">
+            <source src="assets/WhatsApp Audio 2025-10-17 at 7.35.28 PM.mpeg" type="audio/ogg">
+            Tu navegador no soporta audio integrado. Puedes <a href="assets/entrevista-organizador.mp3">descargar el audio (MP3)</a>.
+          </audio>
+
+          <div id="audio-desc" style="font-size:0.9rem;color:var(--muted)">
+            Duración: 0:38— Contenido: entrevista con Hugo Delgado sobre la organización del festival.
+          </div>
+
+          <h3>Vide:&nbsp; La boa&nbsp; (En vivo)&nbsp; Auditorio Naciónal.</h3>
+          
+
+          <video controls playsinline preload="metadata" poster="assets/video-poster.jpg" aria-label="Video resumen del Festival Urbano">
+            <source src="assets/La Boa (En Vivo) _ Auditorio Nacional _ Sonora Santanera de Carlos Colorado.mp4">
+            <source src="assets/La Boa (En Vivo) _ Auditorio Nacional _ Sonora Santanera de Carlos Colorado.mp4" type="video/mp4">
+            Tu navegador no puede reproducir video. <a href="assets/resumen-festival.mp4">Descarga el video (MP4)</a>.
+          </video>
+
+          <div style="font-size:0.9rem;color:var(--muted)">
+           
+          </div>
+        </div>
+
+        <h3>Contexto y repercusiones del festival.</h3>
+        <p>Comerciantes reportaron aumento de ventas y los colectivos de arte anunciaron la continuidad de talleres gratuitos. La Alcaldía apoyó con logística y limpieza.</p>
+
+        <p>Fue una presentación en vivo de la Sonora Santanera de Carlos Colorado en el Auditorio Nacional, donde se interpreta la canción "La Boa". Este título podría referirse a un álbum grabado en vivo o a un evento específico, pero principalmente identifica a la icónica banda mexicana interpretando su éxito más emblemático en el Auditorio Nacional.</p>
+      </div>
+    </article>
+
+    <aside class="sidebar" aria-labelledby="aside-title">
+      <h3 id="aside-title">Lo mas nuevo de noticias.&nbsp;</h3>
+      <div class="meta"><em><strong>Publicidad · Perfil · Multimedia</strong></em></div>
+
+      <section class="related" aria-label="Artículos relacionados">
+        <h4>Artículos relacionados</h4>
+        <a href="#"><img src="assets/noche-de-primavera-2025-conciertos-gratis-cdmx.jpg" alt="Banda joven" width="50" loading="lazy"></a>
+        <p style="margin:8px 0 0 0"><strong><em>La nostagia del baile esta el la gente adulta.&nbsp;&nbsp;</em></strong></p>
+      </section>
+
+      <section style="margin-top:12px">
+        <h4>&nbsp;</h4>
+        <p style="margin:6px 0 0 0">&nbsp;</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>Bibliografía y créditos: González, J. (2018); Ceballos, M. (2017). Guía de prácticas PRIN0801J.</p>
+  </footer>
   </div>
-
-  <script>
-    const info = {
-      seo: `
-        <div class='flex flex-col gap-4'>
-          <img src="https://www.pixel-gd.net/wp-content/uploads/2017/01/SEO-PNG-Pic.png" class="w-24 mx-auto opacity-90" />
-          <h2 class='text-3xl font-bold text-red-700 mb-2 text-center'>SEO</h2>
-          <p class='text-lg'>
-            El SEO (Optimización para Motores de Búsqueda) consiste en aplicar diferentes mejoras a una página web 
-            para que aparezca en mejores posiciones dentro de los resultados orgánicos de buscadores como Google. 
-            Estas mejoras incluyen un buen uso de palabras clave, una estructura clara del sitio, tiempos de carga rápidos 
-            y contenido útil y de calidad para los usuarios.
-          </p>
-        </div>
-      `,
-
-      sem: `
-        <div class='flex flex-col gap-4'>
-          <img src="https://www.starmark.com/wp-content/uploads/SMI_eTipEmail_number_217_700pix.png" class="w-24 mx-auto opacity-90" />
-          <h2 class='text-3xl font-bold text-red-700 mb-2 text-center'>SEM</h2>
-          <p class='text-lg'>
-            El SEM (Marketing en Motores de Búsqueda) se basa en promocionar un sitio web a través de anuncios pagados, 
-            logrando aparecer rápidamente en las primeras posiciones. 
-            Normalmente se utiliza el sistema de pago por clic (PPC), además de estrategias de segmentación y anuncios patrocinados 
-            para llegar a públicos específicos.
-          </p>
-        </div>
-      `,
-
-      visibilidad: `
-        <div class='flex flex-col gap-4'>
-          <img src="https://cdn-icons-png.flaticon.com/512/1589/1589689.png" class="w-24 mx-auto opacity-90" />
-          <h2 class='text-3xl font-bold text-red-700 mb-2 text-center'>Visibilidad en Resultados</h2>
-          <p class='text-lg'>
-            La visibilidad en los motores de búsqueda indica la frecuencia y el lugar en el que aparece un sitio 
-            dentro de los resultados de un buscador. 
-            Para lograr una buena visibilidad se combinan técnicas de SEO, campañas SEM, creación de contenido optimizado 
-            y un enfoque constante en mejorar la experiencia del usuario.
-          </p>
-        </div>
-      `
-    };
-
-    function cargar(tipo) {
-      document.getElementById('contenido').innerHTML = info[tipo];
-    }
-  </script>
-
 </body>
 </html>
-
