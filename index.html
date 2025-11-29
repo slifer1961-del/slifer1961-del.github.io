@@ -104,11 +104,30 @@
       flex-direction:column;
       gap:12px;
     }
-    audio, video{
+    audio{
       width:100%;
-      max-width:100%;
       border-radius:6px;
       background:#000;
+    }
+
+    /* VIDEO ESTILO */
+    .video-frame {
+      position:relative;
+      width:100%;
+      padding-bottom:56.25%;
+      height:0;
+      overflow:hidden;
+      border-radius:8px;
+      background:#000;
+    }
+
+    .video-frame iframe{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      border:0;
     }
 
     aside.sidebar{
@@ -161,7 +180,10 @@
         <picture>
           <source srcset="assets/festival-plazoleta-1200.webp" type="image/webp">
           <source srcset="assets/festival-plazoleta-1200.jpg" type="image/jpeg">
-        <a href="assets/6421efc23deca405060617.jpeg"><img src="assets/6421efc23deca405060617.jpeg" alt="Festival cultural en el Palacio Nacional de la CDMX" width="100" height="100"></a> </picture>
+          <a href="assets/6421efc23deca405060617.jpeg">
+            <img src="assets/6421efc23deca405060617.jpeg" alt="Festival cultural en el Palacio Nacional de la CDMX">
+          </a>
+        </picture>
         <figcaption>Asistentes y puestos gastronómicos en el Palacio Nacional de la CDMX, sábado por la tarde.</figcaption>
       </figure>
 
@@ -170,65 +192,53 @@
       <div class="content">
         <p>El festival, organizado por la asociación cultural “Vías y Sonidos”, reunió a bandas locales y colectivos de arte durante dos días. En esta crónica compartimos testimonios, sonido en vivo y un video resumen para acercar la experiencia a los lectores.</p>
 
-        <div class="quote" aria-hidden="false">
+        <div class="quote">
           “Queríamos un espacio donde la ciudad se reencontrara con su cultura. La respuesta superó nuestras expectativas”, comenta Ana López, coordinadora del evento.
         </div>
 
-        <h3>Audio:&nbsp; &nbsp;Entrevista con la gente que disfruto de esta experiencia.&nbsp;</h3>
-       
+        <h3>Audio: Entrevista con asistentes del evento</h3>
 
         <div class="media">
-          <audio controls preload="metadata" aria-describedby="audio-desc">
+          <audio controls preload="metadata">
             <source src="assets/WhatsApp Audio 2025-10-17 at 7.35.28 PM.mpeg">
-            <source src="assets/WhatsApp Audio 2025-10-17 at 7.35.28 PM.mpeg" type="audio/ogg">
-            Tu navegador no soporta audio integrado. Puedes <a href="assets/entrevista-organizador.mp3">descargar el audio (MP3)</a>.
+            Tu navegador no soporta audio integrado.
           </audio>
 
-          <div id="audio-desc" style="font-size:0.9rem;color:var(--muted)">
-            Duración: 0:38— Contenido: entrevista con Hugo Delgado sobre la organización del festival.
-          </div>
+          <h3>Video: Presentación en vivo</h3>
 
-          <h3>Vide:&nbsp; La boa&nbsp; (En vivo)&nbsp; Auditorio Naciónal.</h3>
           
-
-          <video controls playsinline preload="metadata" poster="assets/video-poster.jpg" aria-label="Video resumen del Festival Urbano">
-            <source src="https://www.youtube.com/embed/3PogVVjoiYU?si=mHQRpzEL2no7bJkY">
-            <source src="https://www.youtube.com/embed/3PogVVjoiYU?si=mHQRpzEL2no7bJkY" type="video/mp4">
-            Tu navegador no puede reproducir video. <a href="assets/resumen-festival.mp4">Descarga el video (MP4)</a>.
-          </video>
-
-          <div style="font-size:0.9rem;color:var(--muted)">
-           
+          <div class="video-frame">
+            <iframe 
+              src="assets/La Boa (En Vivo) _ Auditorio Nacional _ Sonora Santanera de Carlos Colorado.mp4"
+              title="Video de YouTube"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
-        <h3>Contexto y repercusiones del festival.</h3>
+        <h3>Contexto y repercusiones</h3>
         <p>Comerciantes reportaron aumento de ventas y los colectivos de arte anunciaron la continuidad de talleres gratuitos. La Alcaldía apoyó con logística y limpieza.</p>
 
-        <p>Fue una presentación en vivo de la Sonora Santanera de Carlos Colorado en el Auditorio Nacional, donde se interpreta la canción "La Boa". Este título podría referirse a un álbum grabado en vivo o a un evento específico, pero principalmente identifica a la icónica banda mexicana interpretando su éxito más emblemático en el Auditorio Nacional.</p>
+        <p>La presentación en vivo mostró el impacto cultural del festival y la respuesta del público, que llenó por completo el espacio.</p>
       </div>
     </article>
 
-    <aside class="sidebar" aria-labelledby="aside-title">
-      <h3 id="aside-title">Lo mas nuevo de noticias.&nbsp;</h3>
+    <aside class="sidebar">
+      <h3>Lo más nuevo en noticias</h3>
       <div class="meta"><em><strong>Publicidad · Perfil · Multimedia</strong></em></div>
 
-      <section class="related" aria-label="Artículos relacionados">
+      <section class="related">
         <h4>Artículos relacionados</h4>
-        <a href="#"><img src="assets/noche-de-primavera-2025-conciertos-gratis-cdmx.jpg" alt="Banda joven" width="50" loading="lazy"></a>
-        <p style="margin:8px 0 0 0"><strong><em>La nostagia del baile esta el la gente adulta.&nbsp;&nbsp;</em></strong></p>
-      </section>
-
-      <section style="margin-top:12px">
-        <h4>&nbsp;</h4>
-        <p style="margin:6px 0 0 0">&nbsp;</p>
+        <a href="#"><img src="assets/noche-de-primavera-2025-conciertos-gratis-cdmx.jpg" alt=""></a>
+        <p><strong><em>La nostalgia del baile en adultos mayores</em></strong></p>
       </section>
     </aside>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <p>Bibliografía y créditos: González, J. (2018); Ceballos, M. (2017). Guía de prácticas PRIN0801J.</p>
   </footer>
-  </div>
+</div>
 </body>
 </html>
