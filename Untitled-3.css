@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Música Electrónica - Evolución y Cultura</title>
+  <link rel="stylesheet" href="ejemplogrid.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Música Electrónica</h1>
+    <p>La energía del sonido digital que transformó generaciones</p>
+  </header>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Historia</a></li>
+      <li><a href="#">Géneros</a></li>
+      <li><a href="#">Artistas</a></li>
+      <li><a href="#">Eventos</a></li>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <section class="intro">
+      <h2>¿Qué es la música electrónica?</h2>
+      <p>
+        La <strong>música electrónica</strong> es un género que utiliza dispositivos electrónicos y tecnología digital 
+        para crear sonidos únicos. Desde los sintetizadores analógicos de los años 70 hasta los DJs y productores 
+        contemporáneos, este estilo ha revolucionado la forma en que escuchamos, producimos y disfrutamos la música.
+      </p>
+    </section>
+
+    <section class="caracteristicas">
+      <h2>Características principales</h2>
+      <div class="grid-caracteristicas">
+        <div class="card">
+          <h3>Innovación sonora</h3>
+          <p>Explora nuevas texturas y ritmos mediante el uso de sintetizadores y software de producción.</p>
+        </div>
+        <div class="card">
+          <h3>Ritmo envolvente</h3>
+          <p>Su estructura repetitiva y sus beats constantes crean una experiencia inmersiva.</p>
+        </div>
+        <div class="card">
+          <h3>Fusión cultural</h3>
+          <p>Combina sonidos y estilos de distintas partes del mundo, reflejando la diversidad global.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ejemplo">
+      <h2>Subgéneros destacados</h2>
+      <div class="grid-ejemplo">
+        <div class="item">Techno</div>
+        <div class="item">House</div>
+        <div class="item">Trance</div>
+        <div class="item">Drum & Bass</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 - Página temática: Música Electrónica | José Gabriel Zamora Flores</p>
+  </footer>
+</body>
+</html>
